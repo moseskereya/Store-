@@ -1,0 +1,31 @@
+﻿@model App2.Models.Product
+
+
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div>
+            <img src="@Model.ImageUrl" class="img-rounded img-responsive" alt="img" />
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="thumbnail">
+            <h4>@Model.Name</h4>
+            <div>
+                <p>@Model.ShortDescription</p>
+                <p>CategoryID : @Model.CategotyId</p>
+
+                <p class="text-right">@Model.Price.ToString("c")</p>
+                <button class="btn">
+                    <a href="/Products/Index">Go back</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

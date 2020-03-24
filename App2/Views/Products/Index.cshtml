@@ -1,0 +1,28 @@
+﻿@model IEnumerable<App2.Models.Product>
+
+@{
+    ViewBag.Title = "Products";
+}
+    <div class="row page-header">
+        <div class="col-sm-12">
+            <h3>Producst Page</h3>
+        </div>
+    </div>
+
+    @foreach (var item in Model) { 
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <h4 class="name">@item.Name</h4>
+            <img src="@item.ImageUrl" class="img-thumbnail" alt="product-img" />
+            <div>
+                <p>@item.description</p>
+                <button class="btn">
+                    <a>
+                        @Html.ActionLink("Details", "Details", "Products", new { Id = item.Id }, null)
+                    </a>
+                </button>
+                <p class="text-right">@item.Price.ToString("c")</p>
+            </div>
+        </div>
+    </div>
+}
